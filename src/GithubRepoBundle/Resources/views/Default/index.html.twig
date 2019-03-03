@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Most starred public PHP projects</h1>
+            <p class="lead text-muted">Data is obtained from the GitHub API. </p>
+            <p>
+                <a href="#" id="refresh-button" class="btn btn-primary">Refresh now</a>
+                <div id="refresh-data" style="display:none">
+                    <span class="spinner-border" style="width:1em;height:1em;" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </span>    
+                    <span class="text-muted" style="padding-bottom:15px;">Importing</span>
+                </div>
+
+            </p>
+
+            <div class="progress">
+                <div id="refresh-data-progress" class="progress-bar" style="width: 0%;">
+                    <span class="sr-only"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div id="php-repos">
+                <div class="spinner-border" role="status" style="margin:auto;display:block;">
+                    <span class="sr-only">Loading...</span>
+                </div>    
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script type="text/javascript" src="{{ asset('//cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/datatables/js/datatables.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('githubrepobundle/js/githubrepobundle.js') }}"></script>
+
+    <script>
+        $(function() { 
+            githubRepoBundleInit( {{ datatable_settings(datatable) }} );
+            refreshData();
+        });
+    </script>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{# GithubRepoBundle/Resources/views/Default/details.html.twig #}
+
+{% block modal %}
+
+    {% if empty is defined %}
+        <p>No repo was selected.</p>
+    {% else %}
+
+        <h1><strong>{{ data.fullName }}</strong></h1>
+        
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <p><strong>Created:</strong> {{ data.dateCreated.date|date("m/d/Y", "America/Chicago") }} </p>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <p><strong>Last Push:</strong> {{ data.lastPush.date|date("m/d/Y", "America/Chicago") }} </p>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <p><strong>Stargazers:</strong> {{ data.stargazersCount|number_format(0,'.', ',') }} </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <p class="card-text">{{ data.description }}</p>
+                        <p><a target="_blank" href="{{ data.url }}">{{ data.url }}</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+
+{% endblock %}
+

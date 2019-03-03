@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Github Repo Challenge!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" type="text/css" href="{{ asset('//bootswatch.com/4/cosmo/bootstrap.min.css') }}" />
+            <link rel="stylesheet" type="text/css" href="{{ asset('//cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css') }}"/>
+        {% endblock %}
+        
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+
+    <body>
+        <header>
+            <div class="collapse bg-dark" id="navbarHeader">
+                <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                        <h4 class="text-white">Challenge Details</h4>
+                        <p class="text-muted"> • Retrieve from GitHub API the most starred public PHP projects. </br>
+                            • Store repository ID, name, description, URL, number of stars, created date & last push date in a MySQL table.</br>
+                            • Add capability to run the process repeatedly and update the table each time.</br>
+                            • Display data in an interface where user can see all details.</br></br>
+
+                            Links: <a target="_blank" href="https://developer.github.com/v3/">Github API</a> | 
+                            <a target="_blank" href="https://developer.github.com/v3/search/">Github API - Search</a>
+                        </p>
+
+                    </div>
+                    <div class="col-sm-4 offset-md-1 py-4">
+                        <h4 id="me" class="text-white">Yamel Hall</h4>
+                        <ul id="contact-me" class="list-unstyled">
+                            <li><a href="#" class="text-white">
+                                <a href="https://www.linkedin.com/in/yamelhall">LinkedIn Page</a></li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="navbar navbar-dark bg-dark shadow-sm">
+                <div class="container d-flex justify-content-between">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                    <strong>PHP Repositories on GitHub</strong>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                </div>
+            </div>
+        </header>
+        <section id="js_warning">
+            <div class="alert alert-warning">
+                <div class="container">
+                <h6>We detected your browser is running without Javascript enabled.
+                To use this site, please enable Javascript. </h6>
+                </div>
+            </div>
+        </section>
+        <script type="text/javascript">
+            document.getElementById('js_warning').style.display = 'none';
+        </script>
+
+        <main id="main" role="main">
+            {% block body %}{% endblock %}
+        </main>
+
+        <footer class="text-muted">
+            <div class="container">
+                <p class="float-right">
+                    <a href="#">Back to top</a>
+                </p>
+            </div>
+        </footer>
+
+        <div id="appModal" class="modal fade">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                
+                    <div class="modal-header">
+                        <h4 class="modal-title"></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div id="modal-content" class="modal-body">
+                        <div id="refresh-data" class="spinner-border" role="status" style="margin:auto;display:block;">
+                            <span class="sr-only">Loading...</span>
+                        </div>    
+
+                        {# <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p> #}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        {# <button type="button" class="btn btn-primary">Save changes</button> #}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% block javascripts %}
+            <script type="text/javascript" src="{{ asset('//bootswatch.com/_vendor/jquery/dist/jquery.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('//bootswatch.com/_vendor/popper.js/dist/umd/popper.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
+            <script type="text/javascript" src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+        {% endblock %}
+
+    </body>
+</html>
