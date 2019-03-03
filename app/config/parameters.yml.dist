@@ -6,4 +6,5 @@ parameters:
     database_port: ~
     database_name: symfony
     database_user: root
-    database_password: ~
+    database_password: ~    
+    secret: ThisTokenIsNotSoSecretChangeIt
