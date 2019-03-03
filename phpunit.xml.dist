@@ -11,11 +11,10 @@
         <ini name="error_reporting" value="-1" />
         <server name="KERNEL_CLASS" value="AppKernel" />
         <env name="SYMFONY_PHPUNIT_VERSION" value="6.5" />
-
     </php>
 
     <testsuites>
-        <testsuite name="Project Test Suite">
+        <testsuite name="Project GitHub Repo Sample">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
