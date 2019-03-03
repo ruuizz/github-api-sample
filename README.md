@@ -12,12 +12,12 @@
 
 • WebPack was left out purposely, to reduce number of dependencies needd to be installed to run this project.
 
-• Simple unit & functional tests have been included to this project. At the time of development I need deeper understanding of tests for private services. 
+• Simple unit & functional tests have been included to this project. At the time of development I need deeper understanding of tests for private services. So services do not have complete tests created.
 
 • I can also work out some Mink tests and add in the future.
 
 
-From the list of requirements document
+From the list of items requested to complete for this sample:
 
 - [x] Use the GitHub API to retrieve the most starred public PHP projects.
 - [x] Store the list of repositories in a MySQL table.
