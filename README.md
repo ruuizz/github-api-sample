@@ -53,7 +53,7 @@ From the list of items requested to complete for this sample:
 composer install
 ```
 
-4. Fill parameter information directly from command line or make copy parameter.yml.dist in the same location and name it parameters.yml. Fill out parameter information for DB
+4. Fill parameter information directly from command line or make copy parameter.yml.dist in the same location and name it parameters.yml. Fill out parameter information for DB. You can leave the mailer transport params empty.
 
 5. You can view the schema on your database needed by running:
 
