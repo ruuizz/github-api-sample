@@ -1,5 +1,4 @@
 # Popular PHP Repositories on GitHub
-===================================
 
 • This project provides a simple list of the top 1K PHP repositories hosted in Github. The repositories are ranked by the number of stargazers.
 
@@ -25,8 +24,8 @@ From the list of requirements document
 - [x] The table must contain the repository ID, name, URL, created date, last push date, description, and number of stars. 
 - [x] This process should be able to be run repeatedly and update the table each time.
 - [x] Using the data in the table created in step 1, create an interface that displays a list of the GitHub repositories and allows the user to click through to view details on each one. 
-- [x]Be sure to include all of the fields in step 1 – displayed in either the list or detailed view.
-- [x]Create a README file with a description of your architecture and notes on installation of your application.
+- [x] Be sure to include all of the fields in step 1 – displayed in either the list or detailed view.
+- [x] Create a README file with a description of your architecture and notes on installation of your application.
 
 
 ## Requirements
@@ -88,7 +87,7 @@ bin/console server:run
 
 
 
-Tests
+## Tests
 
 For testing, make sure phpunit.xml file is pointing to use a version higher than 6.
 For that add the environment variable value to the php block.
